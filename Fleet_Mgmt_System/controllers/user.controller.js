@@ -2,7 +2,7 @@ import supabase from "../config/supabase";
 
 export const signup = async(req,res) => {
     const {name, email, password,role} = req.body;
-    const {error} = await supabase
+    const {data,error} = await supabase
     .from("user")
     .insert([{
         name,
@@ -14,5 +14,5 @@ export const signup = async(req,res) => {
     if(error) {
         return res.status(400).json({error:error.message})
     }
-    res.json({message:"user created"});
+    res.json({message:"user created",data});
 }
