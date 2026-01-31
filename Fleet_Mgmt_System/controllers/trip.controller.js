@@ -1,4 +1,4 @@
-import supabase from '../config/supabase.js';
+import supabase from '../config/supabase.config.js';
 
 export const createTrip = async (req, res) => {
   const { customer_id, vehicle_id, start_date, end_date, location, distance_km, passengers } = req.body;

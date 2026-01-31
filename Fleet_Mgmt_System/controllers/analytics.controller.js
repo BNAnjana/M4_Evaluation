@@ -1,3 +1,7 @@
+import supabase from "../config/supabase.config.js";
+import { Router } from 'express';
+const router = Router();
+
 export async function getAnalytics(req, res) {
   const [customers, owners, drivers, vehicles, trips] = await Promise.all([
     supabase.from('users').select('*', { count: 'exact' }).eq('role','customer'),

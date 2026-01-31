@@ -1,4 +1,4 @@
-import supabase from "../config/supabase";
+import supabase from "../config/supabase.config.js";
 
 export const signup = async(req,res) => {
     const {name, email, password,role} = req.body;

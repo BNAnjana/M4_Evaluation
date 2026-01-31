@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 const app = express();
 dotenv.config();
 
-import logger from './middlewares/logger';
-import notFound from './middlewares/notFound';
+import logger from './middlewares/logger.js';
+import notFound from './middlewares/notFound.js';
 
 app.use(json());
 app.use(logger);

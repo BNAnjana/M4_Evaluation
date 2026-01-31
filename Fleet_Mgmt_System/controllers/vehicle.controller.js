@@ -1,4 +1,4 @@
-import supabase from "../config/supabase.config";
+import supabase from "../config/supabase.config.js";
 
 export const addVehicle = async(req,res) => {
     const {name,registration_number,allowed_passengers,rate_per_km,owner_id} = req.body;
