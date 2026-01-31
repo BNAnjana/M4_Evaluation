@@ -1,9 +1,23 @@
-import express from "express";
-
+import express, { json } from 'express';
+import dotenv from "dotenv";
 const app = express();
-app.use(express.json());
-const PORT = 3000;
+dotenv.config();
 
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+import logger from './middlewares/logger';
+import notFound from './middlewares/notFound';
+
+app.use(json());
+app.use(logger);
+
+// Routes
+app.use('/users', require('./routes/user.routes'));
+app.use('/vehicles', require('./routes/vehicle.routes'));
+app.use('/trips', require('./routes/trip.routes'));
+app.use('/analytics', require('./routes/analytics.routes'));
+
+// 404 handler
+app.use(notFound);
+
+app.listen(3000, () => {
+  console.log("Server running on port 3000");
 });
