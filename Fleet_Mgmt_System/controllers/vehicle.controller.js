@@ -3,7 +3,7 @@ import supabase from "../config/supabase.config.js";
 export const addVehicle = async(req,res) => {
     const {name,registration_number,allowed_passengers,rate_per_km,owner_id} = req.body;
     const{data,error} = await supabase
-    .from("vehicle")
+    .from("vehicles")
     .insert([{
         name,
         registration_number,

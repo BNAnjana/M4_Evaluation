@@ -3,7 +3,7 @@ import supabase from "../config/supabase.config.js";
 export const signup = async(req,res) => {
     const {name, email, password,role} = req.body;
     const {data,error} = await supabase
-    .from("user")
+    .from("users")
     .insert([{
         name,
         email,
