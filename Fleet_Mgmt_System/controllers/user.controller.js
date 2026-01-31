@@ -15,4 +15,4 @@ export const signup = async(req,res) => {
         return res.status(400).json({error:error.message})
     }
     res.json({message:"user created",data});
-}
+};
