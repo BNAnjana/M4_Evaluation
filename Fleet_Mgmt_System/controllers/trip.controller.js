@@ -52,6 +52,7 @@ export const deleteTrip = async (req, res) => {
   res.status(200).json({ message: 'Trip deleted' });
 };
 
+// End Trip
 export const endTrip = async (req, res) => {
   const { tripId } = req.params;
 
